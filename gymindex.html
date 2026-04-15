@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLife Gym</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #0f172a; color: white; }
+    header { display: flex; justify-content: space-between; padding: 20px 50px; background: rgba(0,0,0,0.6); position: fixed; width: 100%; }
+    header h1 { color: #22c55e; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; }
+    nav a:hover { color: #22c55e; }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1554284126-aa88f22d8b74') no-repeat center/cover;
+    }
+
+    .hero h2 { font-size: 50px; }
+    .hero p { margin: 20px 0; }
+    .btn {
+      padding: 12px 25px;
+      background: #22c55e;
+      border: none;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .section { padding: 80px 50px; text-align: center; }
+
+    .cards { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .pricing { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+    .price-card {
+      background: #111827;
+      padding: 30px;
+      border-radius: 12px;
+      width: 250px;
+    }
+
+    footer { text-align: center; padding: 20px; background: black; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>FitLife Gym</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Transform Your Body</h2>
+  <p>Join FitLife Gym and achieve your fitness goals</p>
+  <button class="btn">Join Now</button>
+</section>
+
+<section id="services" class="section">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Personal Training</h3>
+      <p>Expert trainers to guide you</p>
+    </div>
+    <div class="card">
+      <h3>Cardio Training</h3>
+      <p>Modern cardio equipment</p>
+    </div>
+    <div class="card">
+      <h3>Strength Training</h3>
+      <p>Build muscle and strength</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section">
+  <h2>Membership Plans</h2>
+  <div class="pricing">
+    <div class="price-card">
+      <h3>Basic</h3>
+      <p>$20/month</p>
+    </div>
+    <div class="price-card">
+      <h3>Standard</h3>
+      <p>$40/month</p>
+    </div>
+    <div class="price-card">
+      <h3>Premium</h3>
+      <p>$60/month</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <p>Email: info@fitlifegym.com</p>
+  <p>Phone: +1 204 000 0000</p>
+</section>
+
+<footer>
+  <p>© 2026 FitLife Gym. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
