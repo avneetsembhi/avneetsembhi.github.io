@@ -132,4 +132,131 @@ A centralized server (10.10.10.50) provides both DHCP and DNS services.
 - DNS resolves internal and external domain names  
 
 ### DHCP Relay
+ip helper-address 10.10.10.50
+
+This allows clients in different VLANs to receive IP addresses.
+
+---
+
+## 9. Access Control Lists (ACLs)
+
+ACLs enforce **security policies between VLANs**.
+
+### Staff VLAN (VLAN 20)
+- Internet access allowed  
+- Internal apps allowed  
+- SSH, Telnet, RDP blocked  
+
+### IT Admin VLAN (VLAN 30)
+- Full administrative access  
+- Can manage servers and network devices  
+
+### Guest VLAN (VLAN 40)
+- Only allowed:
+  - DNS
+  - HTTP/HTTPS
+- Blocked from all internal networks  
+
+---
+
+## 10. Switch Configuration Overview
+
+Switches are configured for VLAN segmentation, trunking, and secure access.
+
+### Access Layer (S-C)
+
+| Port | VLAN | Device |
+|-----|------|--------|
+| Fa0/1 | 20 | Staff PC |
+| Fa0/2 | 30 | IT PC |
+| Gi0/1 | 40 | Guest AP |
+
+All inter-switch links use trunk mode to carry multiple VLANs.
+
+---
+
+## 11. Wireless Network Design
+
+Two wireless networks are deployed:
+
+- **Staff WiFi (VLAN 20)** — Internal access  
+- **Guest WiFi (VLAN 40)** — Internet only  
+
+Guest users are fully isolated using ACL policies.
+
+---
+
+## 12. Security Implementation
+
+### Layer 2 Security
+- DHCP Snooping  
+- Dynamic ARP Inspection  
+- BPDU Guard  
+- PortFast  
+
+### Layer 3 Security
+- ACLs control traffic between VLANs  
+
+### Device Security
+- SSH version 2 only  
+- Local authentication  
+- Restricted remote access  
+
+---
+
+## 13. Server Infrastructure
+
+### Server VLAN (VLAN 10)
+
+| Server | Role |
+|-------|------|
+| DB1 | AD, DNS, DHCP |
+| HV1 | Virtualization |
+
+### DMZ VLAN (VLAN 15)
+
+| Server | Role |
+|-------|------|
+| WEB1 | Web Server |
+| MAIL1 | Mail Server |
+
+The DMZ isolates public services from the internal network.
+
+---
+
+## 14. Verification and Testing
+
+The following commands are used to verify network functionality:
+
+
+These confirm:
+- HSRP status  
+- VLAN operation  
+- Link aggregation  
+- Routing and NAT  
+
+---
+
+## 15. Design Justification
+
+- **HSRP** → Ensures gateway redundancy  
+- **VLANs** → Improve segmentation and security  
+- **ACLs** → Enforce least privilege  
+- **DMZ** → Protect internal network  
+- **EtherChannel** → Provides redundancy and performance  
+
+---
+
+## 16. Conclusion
+
+The FitLife Gym network provides a **secure, scalable, and highly available infrastructure**.
+
+It ensures:
+- Continuous operation  
+- Strong security enforcement  
+- Efficient network performance  
+
+---
+
+*End of Documentation*
 
